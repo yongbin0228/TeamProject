@@ -57,7 +57,7 @@ public class Main extends JFrame {
 
         JLabel imgLb = new JLabel();
         ImageIcon img = new ImageIcon("images/pde1.png");
-       imgLb.setIcon(img);
+       imgLb.setIcon(img);ㅏ
 
         imgLb.setBounds(204,30,150,150);
         contentPane.add(imgLb);

@@ -148,10 +148,10 @@ public class Shop extends JFrame {
             }
         });
         button3.addActionListener(event ->{
-            if(Info.cash >= 3000){
-                Info.cash -= 3000;
+            if(Info.money >= 300000){
+                Info.money -= 300000;
                 Info.coupon_exp = 2;
-                lb5.setText("캐     쉬 : " + Info.cash + " CASH");
+                lb4.setText("    돈      : "+Info.money+" PD");
                 lb7.setText("[ EXP ↑ : "+Info.skin*Info.coupon_exp +", PD ↑ : "+Info.skin*Info.coupon_money+" ]");
                 JOptionPane.showMessageDialog(null, "구매 완료", "상점", JOptionPane.INFORMATION_MESSAGE);
                 btn3 = false;
@@ -161,10 +161,10 @@ public class Shop extends JFrame {
             }
         });
         button4.addActionListener(event ->{
-            if(Info.cash >= 600){
-                Info.cash -= 600;
+            if(Info.money >= 150000){
+                Info.money -= 150000;
                 Info.coupon_money = 2;
-                lb5.setText("캐     쉬 : " + Info.cash + " CASH");
+                lb4.setText("    돈      : "+Info.money+" PD");
                 lb7.setText("[ EXP ↑ : "+Info.skin*Info.coupon_exp +", PD ↑ : "+Info.skin*Info.coupon_money+" ]");
                 JOptionPane.showMessageDialog(null, "구매 완료", "상점", JOptionPane.INFORMATION_MESSAGE);
                 btn4 = false;
