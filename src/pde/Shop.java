@@ -151,6 +151,8 @@ public class Shop extends JFrame {
                 JOptionPane.showMessageDialog(null, "구매 완료", "상점", JOptionPane.INFORMATION_MESSAGE);
                 btn3 = false;
                 dispose();
+            }else {
+                JOptionPane.showMessageDialog(null, "CASH가 부족합니다", "상점", JOptionPane.WARNING_MESSAGE);
             }
         });
         button4.addActionListener(event ->{
@@ -161,6 +163,8 @@ public class Shop extends JFrame {
                 JOptionPane.showMessageDialog(null, "구매 완료", "상점", JOptionPane.INFORMATION_MESSAGE);
                 btn4 = false;
                 dispose();
+            }else {
+                JOptionPane.showMessageDialog(null, "CASH가 부족합니다", "상점", JOptionPane.WARNING_MESSAGE);
             }
         });
         button5.addActionListener(event ->{
@@ -171,6 +175,8 @@ public class Shop extends JFrame {
                 lb5.setText("캐     쉬 : " + Info.cash + " CASH");
 
                 JOptionPane.showMessageDialog(null, "구매 완료 현재 돈 [ "+Info.money+" PD ]", "상점", JOptionPane.INFORMATION_MESSAGE);
+            }else {
+                JOptionPane.showMessageDialog(null, "CASH가 부족합니다", "상점", JOptionPane.WARNING_MESSAGE);
             }
         });
         button6.addActionListener(event ->{
@@ -186,6 +192,8 @@ public class Shop extends JFrame {
                 lb3.setText("경 험 치 : "+Info.exp+"/"+Info.max_exp);
                 lb4.setText("    돈      : "+Info.money+" PD");
                 lb5.setText("캐     쉬 : " + Info.cash + " CASH");
+            }else {
+                JOptionPane.showMessageDialog(null, "CASH가 부족합니다", "상점", JOptionPane.WARNING_MESSAGE);
             }
             if(Info.level == 100){
                 btn6 = false;
