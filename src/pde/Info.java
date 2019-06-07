@@ -5,22 +5,30 @@ import javax.swing.*;
 class Info {
     //기본값 설정
     static String name = "파댕이";
+    static int coupon_exp = 1;
+    static int coupon_money = 1;
     static int level = 1;
     static int exp = 0;
     static int max_exp = 10;
     static int add_exp = 10;
     static int money = 100;
-    static int cash = 100;
+    static int cash = 102213320;
     static String input;
     static String input2;
 
     static void moeny_up() {
-        money++;
+        money+= coupon_money;
     }
 
     static void exp_up() {
         if (level < 99) {
-            exp ++;
+            int random = (int)(Math.random()*100+1);
+            if(random == 77){
+                cash += 100;
+                JOptionPane.showMessageDialog(null,"100CASH를 주웠습니다", "깜짝 보상", JOptionPane.INFORMATION_MESSAGE);
+
+            }
+            exp += coupon_exp;
             if (exp >= max_exp) {
                 level++;
                 exp = 0;

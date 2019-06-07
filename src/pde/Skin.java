@@ -3,11 +3,23 @@ package pde;
 import javax.swing.*;
 import javax.swing.plaf.FontUIResource;
 import java.awt.*;
-import java.util.*;
+import java.util.Enumeration;
 
-class Skin extends JFrame{
+class Skin extends JFrame {
     Container contentPane;
-    Skin(JLabel imgLb){
+    static boolean hasSkin2 = false;
+    static boolean hasSkin3 = false;
+    static boolean hasSkin4 = false;
+    static boolean hasSkin5 = false;
+    static boolean hasSkin6 = false;
+    static JButton button1 = new JButton("파댕이");
+    static JButton button2 = new JButton("충성 파댕이");
+    static JButton button3 = new JButton("불의 축제 파댕이");
+    static JButton button4 = new JButton("리치 파댕이");
+    static JButton button5 = new JButton("나 파댕이 아니다");
+    static JButton button6 = new JButton("내가 젖소 파댕이");
+
+    Skin(JLabel imgLb) {
         //프레임 제목 설정
         setTitle("스킨 설정");
         //프레임을 화면 가운데에 배치
@@ -43,12 +55,12 @@ class Skin extends JFrame{
         imgLb6.setIcon(img6);
 
         //라벨 위치설정
-        imgLb1.setBounds(80,18,100,100);
-        imgLb2.setBounds(242,18,100,100);
-        imgLb3.setBounds(400,18,100,100);
-        imgLb4.setBounds(80,159,100,100);
-        imgLb5.setBounds(242,159,100,100);
-        imgLb6.setBounds(400,159,100,100);
+        imgLb1.setBounds(80, 18, 100, 100);
+        imgLb2.setBounds(242, 18, 100, 100);
+        imgLb3.setBounds(400, 18, 100, 100);
+        imgLb4.setBounds(80, 159, 100, 100);
+        imgLb5.setBounds(242, 159, 100, 100);
+        imgLb6.setBounds(400, 159, 100, 100);
 
         //프레임에 라벨 추가
         contentPane.add(imgLb1);
@@ -58,30 +70,29 @@ class Skin extends JFrame{
         contentPane.add(imgLb5);
         contentPane.add(imgLb6);
 
-        JButton button1 = new JButton("파댕이");
         contentPane.add(button1);
-        JButton button2 = new JButton("충성 파댕이");
         contentPane.add(button2);
-        button2.setEnabled(false);
-        JButton button3 = new JButton("불의 축제 파댕이");
         contentPane.add(button3);
-        button3.setEnabled(false);
-        JButton button4 = new JButton("리치 파댕이");
         contentPane.add(button4);
-        button4.setEnabled(false);
-        JButton button5 = new JButton("나 파댕이 아니다");
         contentPane.add(button5);
-        button5.setEnabled(false);
-        JButton button6 = new JButton("내가 젖소 파댕이");
         contentPane.add(button6);
-        button6.setEnabled(false);
+        if (!(hasSkin2))
+            button2.setEnabled(false);
+        if (!(hasSkin3))
+            button3.setEnabled(false);
+        if (!(hasSkin4))
+            button4.setEnabled(false);
+        if (!(hasSkin5))
+            button5.setEnabled(false);
+        if (!(hasSkin6))
+            button6.setEnabled(false);
 
-        button1.setBounds(55,123,150,30);
-        button2.setBounds(217,123,150,30);
-        button3.setBounds(379,123,150,30);
-        button4.setBounds(55,263,150,30);
-        button5.setBounds(217,263,150,30);
-        button6.setBounds(379,263,150,30);
+        button1.setBounds(55, 123, 150, 30);
+        button2.setBounds(217, 123, 150, 30);
+        button3.setBounds(379, 123, 150, 30);
+        button4.setBounds(55, 263, 150, 30);
+        button5.setBounds(217, 263, 150, 30);
+        button6.setBounds(379, 263, 150, 30);
 
         ImageIcon img11 = new ImageIcon("images/pde1.png");
         ImageIcon img22 = new ImageIcon("images/pde2.png");
@@ -90,27 +101,27 @@ class Skin extends JFrame{
         ImageIcon img55 = new ImageIcon("images/pde5.png");
         ImageIcon img66 = new ImageIcon("images/pde6.png");
 
-        button1.addActionListener(event ->{
+        button1.addActionListener(event -> {
             imgLb.setIcon(img11);
             dispose();
         });
-        button2.addActionListener(event ->{
+        button2.addActionListener(event -> {
             imgLb.setIcon(img22);
             dispose();
         });
-        button3.addActionListener(event ->{
+        button3.addActionListener(event -> {
             imgLb.setIcon(img33);
             dispose();
         });
-        button4.addActionListener(event ->{
+        button4.addActionListener(event -> {
             imgLb.setIcon(img44);
             dispose();
         });
-        button5.addActionListener(event ->{
+        button5.addActionListener(event -> {
             imgLb.setIcon(img55);
             dispose();
         });
-        button6.addActionListener(event ->{
+        button6.addActionListener(event -> {
             imgLb.setIcon(img66);
             dispose();
         });
@@ -121,6 +132,41 @@ class Skin extends JFrame{
         //프레임이 보이도록 설정
         setVisible(true);
 
+    }
+
+    public static void skin1_buy() {
+        JOptionPane.showMessageDialog(null, "파댕이 스킨을 획득하였습니다", "상점", JOptionPane.INFORMATION_MESSAGE);
+    }
+    public static void skin2_buy() {
+        hasSkin2 = true;
+        JOptionPane.showMessageDialog(null, "충성 파댕이 스킨을 획득하였습니다", "상점", JOptionPane.INFORMATION_MESSAGE);
+    }
+    public static void skin3_buy() {
+        hasSkin3 = true;
+        JOptionPane.showMessageDialog(null, "불의 축제 파댕이 스킨을 획득하였습니다", "상점", JOptionPane.INFORMATION_MESSAGE);
+    }
+    public static void skin4_buy() {
+        hasSkin4 = true;
+        JOptionPane.showMessageDialog(null, "리치 파댕이 스킨을 획득하였습니다", "상점", JOptionPane.INFORMATION_MESSAGE);
+    }
+    public static void skin5_buy() {
+        hasSkin5 = true;
+        JOptionPane.showMessageDialog(null, "나 파댕이 아니다 스킨을 획득하였습니다", "상점", JOptionPane.INFORMATION_MESSAGE);
+    }
+    public static void skin6_buy() {
+        hasSkin6 = true;
+        JOptionPane.showMessageDialog(null, "내가 젖소 파댕이 스킨을 획득하였습니다", "상점", JOptionPane.INFORMATION_MESSAGE);
+    }
+
+
+
+    public static void skin_all_buy() {
+        hasSkin2 = true;
+        hasSkin3 = true;
+        hasSkin4 = true;
+        hasSkin5 = true;
+        hasSkin6 = true;
+        JOptionPane.showMessageDialog(null, "모든 스킨을 획득 하였습니다", "상점", JOptionPane.INFORMATION_MESSAGE);
     }
 
 
