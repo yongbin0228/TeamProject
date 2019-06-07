@@ -46,6 +46,14 @@ public class Main extends JFrame {
         lb5.setBounds(20,150,184,30);
         lb5.setText("캐     쉬 : "+Info.cash+" CASH");
         contentPane.add(lb5);
+        JLabel lb6 = new JLabel();
+        lb6.setBounds(18,175,184,30);
+        lb6.setText("[ 파댕이 ]");
+        contentPane.add(lb6);
+        JLabel lb7 = new JLabel();
+        lb7.setBounds(18,200,184,30);
+        lb7.setText("[ EXP ↑ : "+Info.skin*Info.coupon_exp +", PD ↑ : "+Info.skin*Info.coupon_money+" ]");
+        contentPane.add(lb7);
 
         JLabel imgLb = new JLabel();
         ImageIcon img = new ImageIcon("images/pde1.png");
@@ -91,6 +99,7 @@ public class Main extends JFrame {
         btn1.addActionListener(event -> {
             Info.moeny_up();
             lb4.setText("    돈      : "+Info.money+" PD");
+            lb5.setText("캐     쉬 : "+Info.cash+" CASH");
         });
         btn2.addActionListener(event -> {
             Info.exp_up();
@@ -110,7 +119,7 @@ public class Main extends JFrame {
             }
         });
         btn3.addActionListener(event -> {
-            new Shop(lb2, lb3, lb4, lb5, btn2);
+            new Shop(lb2, lb3, lb4, lb5, lb7, btn2);
         });
         btn4.addActionListener(event -> {
             Info.cash_add();
@@ -124,7 +133,7 @@ public class Main extends JFrame {
 
         });
         btn6.addActionListener(event -> {
-            new Skin(imgLb);
+            new Skin(imgLb, lb6, lb7);
         });
         //프레임 크기 설정
         setSize(400, 350);

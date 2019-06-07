@@ -14,7 +14,7 @@ public class Shop extends JFrame {
     static boolean btn5 = true;
     static boolean btn6 = true;
 
-    Shop(JLabel lb2, JLabel lb3, JLabel lb4, JLabel lb5, JButton btn22) {
+    Shop(JLabel lb2, JLabel lb3, JLabel lb4, JLabel lb5, JLabel lb7, JButton btn22) {
         //프레임 제목 설정
         setTitle("상점");
         //프레임을 화면 가운데에 배치
@@ -152,6 +152,7 @@ public class Shop extends JFrame {
                 Info.cash -= 3000;
                 Info.coupon_exp = 2;
                 lb5.setText("캐     쉬 : " + Info.cash + " CASH");
+                lb7.setText("[ EXP ↑ : "+Info.skin*Info.coupon_exp +", PD ↑ : "+Info.skin*Info.coupon_money+" ]");
                 JOptionPane.showMessageDialog(null, "구매 완료", "상점", JOptionPane.INFORMATION_MESSAGE);
                 btn3 = false;
                 dispose();
@@ -164,6 +165,7 @@ public class Shop extends JFrame {
                 Info.cash -= 600;
                 Info.coupon_money = 2;
                 lb5.setText("캐     쉬 : " + Info.cash + " CASH");
+                lb7.setText("[ EXP ↑ : "+Info.skin*Info.coupon_exp +", PD ↑ : "+Info.skin*Info.coupon_money+" ]");
                 JOptionPane.showMessageDialog(null, "구매 완료", "상점", JOptionPane.INFORMATION_MESSAGE);
                 btn4 = false;
                 dispose();

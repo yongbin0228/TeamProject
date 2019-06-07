@@ -9,10 +9,11 @@ class Info {
     static int coupon_money = 1;
     static int level = 1;
     static int exp = 0;
-    static int max_exp = 10;
-    static int add_exp = 10;
+    static int max_exp = 200;
+    static int add_exp = 50;
     static int money = 100;
     static int cash = 100;
+    static int skin = 1;
     static String input;
     static String input2;
 
@@ -24,7 +25,7 @@ class Info {
                 JOptionPane.showMessageDialog(null, "100CASH를 주웠습니다", "깜짝 보상", JOptionPane.INFORMATION_MESSAGE);
             }
         }
-        money += coupon_money;
+        money += coupon_money*skin;
     }
 
     static void exp_up() {
@@ -34,19 +35,19 @@ class Info {
                 cash += 100;
                 JOptionPane.showMessageDialog(null, "100CASH를 주웠습니다", "깜짝 보상", JOptionPane.INFORMATION_MESSAGE);
             }
-            exp += coupon_exp;
+            exp += coupon_exp*skin;
             if (exp >= max_exp) {
                 level++;
                 exp = 0;
                 money += level * 10;
                 JOptionPane.showMessageDialog(null, "LEVEL UP!!\n돈  " + level * 10 + "원 획득", "레벨 업", JOptionPane.INFORMATION_MESSAGE);
                 if (level % 10 == 0) {
-                    add_exp += 10;
+                    add_exp += 50;
                 }
                 max_exp += add_exp;
             }
         } else if (level == 99) {
-            exp++;
+            exp += coupon_exp*skin;
             if (exp >= max_exp) {
                 level++;
                 exp = 0;
@@ -82,8 +83,6 @@ class Info {
                         break While;
                     } else {
                         JOptionPane.showMessageDialog(null, "코드가 올바르지 않습니다", "캐쉬 충전", JOptionPane.WARNING_MESSAGE);
-                        cash += Integer.valueOf(input);
-                        break While;
                     }
                 }
             }

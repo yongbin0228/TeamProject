@@ -19,7 +19,7 @@ class Skin extends JFrame {
     static JButton button5 = new JButton("나 파댕이 아니다");
     static JButton button6 = new JButton("내가 젖소 파댕이");
 
-    Skin(JLabel imgLb) {
+    Skin(JLabel imgLb, JLabel lb6, JLabel lb7) {
         //프레임 제목 설정
         setTitle("스킨 설정");
         //프레임을 화면 가운데에 배치
@@ -127,26 +127,44 @@ class Skin extends JFrame {
 
         button1.addActionListener(event -> {
             imgLb.setIcon(img11);
+            Info.skin = 1;
+            lb6.setText("[ 파댕이 ]");
+            lb7.setText("[ EXP ↑ : "+Info.skin*Info.coupon_exp +", PD ↑ : "+Info.skin*Info.coupon_money+" ]");
             dispose();
         });
         button2.addActionListener(event -> {
             imgLb.setIcon(img22);
+            Info.skin = 2;
+            lb6.setText("[ 충성 파댕이 ]");
+            lb7.setText("[ EXP ↑ : "+Info.skin*Info.coupon_exp +", PD ↑ : "+Info.skin*Info.coupon_money+" ]");
             dispose();
         });
         button3.addActionListener(event -> {
             imgLb.setIcon(img33);
+            Info.skin = 3;
+            lb6.setText("[ 불의 축제 파댕이 ]");
+            lb7.setText("[ EXP ↑ : "+Info.skin*Info.coupon_exp +", PD ↑ : "+Info.skin*Info.coupon_money+" ]");
             dispose();
         });
         button4.addActionListener(event -> {
             imgLb.setIcon(img44);
+            Info.skin = 4;
+            lb6.setText("[ 리치 파댕이 ]");
+            lb7.setText("[ EXP ↑ : "+Info.skin*Info.coupon_exp +", PD ↑ : "+Info.skin*Info.coupon_money+" ]");
             dispose();
         });
         button5.addActionListener(event -> {
             imgLb.setIcon(img55);
+            Info.skin = 5;
+            lb6.setText("[ 나 파댕이 아니다 ]");
+            lb7.setText("[ EXP ↑ : "+Info.skin*Info.coupon_exp +", PD ↑ : "+Info.skin*Info.coupon_money+" ]");
             dispose();
         });
         button6.addActionListener(event -> {
             imgLb.setIcon(img66);
+            Info.skin = 6;
+            lb6.setText("[ 내가 젖소 파댕이 ]");
+            lb7.setText("[ EXP ↑ : "+Info.skin*Info.coupon_exp +", PD ↑ : "+Info.skin*Info.coupon_money+" ]");
             dispose();
         });
 
