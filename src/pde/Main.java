@@ -47,12 +47,13 @@ public class Main extends JFrame {
         lb5.setText("캐     쉬 : "+Info.cash+" CASH");
         contentPane.add(lb5);
 
-        JLabel imgLb1 = new JLabel();
+        JLabel imgLb = new JLabel();
         ImageIcon img = new ImageIcon("images/pde1.png");
-        imgLb1.setIcon(img);
+       imgLb.setIcon(img);
 
-        imgLb1.setBounds(204,30,150,150);
-        contentPane.add(imgLb1);
+        imgLb.setBounds(204,30,150,150);
+        contentPane.add(imgLb);
+
 
         // 버튼1 생성
         JButton btn1 = new JButton("돈 ↑");
@@ -117,6 +118,9 @@ public class Main extends JFrame {
             lb1.setText("이     름 : "+Info.name);
             JOptionPane.showMessageDialog(null, Info.name + "으로 이름이 변경되었습니다", "이름 변경", JOptionPane.INFORMATION_MESSAGE);
 
+        });
+        btn6.addActionListener(event -> {
+            new Skin(imgLb);
         });
         //프레임 크기 설정
         setSize(400, 350);
