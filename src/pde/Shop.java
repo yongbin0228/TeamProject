@@ -100,8 +100,8 @@ public class Shop extends JFrame {
 
 
         button1.addActionListener(event -> {
-            if (Info.cash >= 20000) {
-                Info.cash -= 20000;
+            if (Info.cash >= 5000) {
+                Info.cash -= 5000;
 
             int random = (int) (Math.random() * 6 + 1);
             switch (random) {
@@ -136,8 +136,8 @@ public class Shop extends JFrame {
             }
         });
         button2.addActionListener(event -> {
-            if (Info.cash >= 100000) {
-                Info.cash -= 100000;
+            if (Info.cash >= 24000) {
+                Info.cash -= 24000;
                 Skin.skin_all_buy();
                 lb5.setText("캐     쉬 : " + Info.cash + " CASH");
                 btn1 = false;
@@ -148,8 +148,8 @@ public class Shop extends JFrame {
             }
         });
         button3.addActionListener(event ->{
-            if(Info.cash >= 20000){
-                Info.cash -= 20000;
+            if(Info.cash >= 3000){
+                Info.cash -= 3000;
                 Info.coupon_exp = 2;
                 lb5.setText("캐     쉬 : " + Info.cash + " CASH");
                 JOptionPane.showMessageDialog(null, "구매 완료", "상점", JOptionPane.INFORMATION_MESSAGE);
@@ -160,8 +160,8 @@ public class Shop extends JFrame {
             }
         });
         button4.addActionListener(event ->{
-            if(Info.cash >= 20000){
-                Info.cash -= 20000;
+            if(Info.cash >= 600){
+                Info.cash -= 600;
                 Info.coupon_money = 2;
                 lb5.setText("캐     쉬 : " + Info.cash + " CASH");
                 JOptionPane.showMessageDialog(null, "구매 완료", "상점", JOptionPane.INFORMATION_MESSAGE);
@@ -184,8 +184,8 @@ public class Shop extends JFrame {
             }
         });
         button6.addActionListener(event ->{
-            if(Info.cash >= 400){
-                Info.cash -= 400;
+            if(Info.cash >= 1000){
+                Info.cash -= 1000;
                 Info.level++;
                 Info.max_exp += Info.add_exp;
                 Info.exp = 0;

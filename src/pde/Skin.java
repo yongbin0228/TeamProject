@@ -54,6 +54,19 @@ class Skin extends JFrame {
         ImageIcon img6 = new ImageIcon("images/100_pde6.png");
         imgLb6.setIcon(img6);
 
+        //단순 비활성화 코드
+        imgLb2.setEnabled(false);
+        imgLb3.setEnabled(false);
+        imgLb4.setEnabled(false);
+        imgLb5.setEnabled(false);
+        imgLb6.setEnabled(false);
+        button2.setEnabled(false);
+        button3.setEnabled(false);
+        button4.setEnabled(false);
+        button5.setEnabled(false);
+        button6.setEnabled(false);
+
+
         //라벨 위치설정
         imgLb1.setBounds(80, 18, 100, 100);
         imgLb2.setBounds(242, 18, 100, 100);
@@ -77,16 +90,26 @@ class Skin extends JFrame {
         contentPane.add(button4);
         contentPane.add(button5);
         contentPane.add(button6);
-        if (!(hasSkin2))
-            button2.setEnabled(false);
-        if (!(hasSkin3))
-            button3.setEnabled(false);
-        if (!(hasSkin4))
-            button4.setEnabled(false);
-        if (!(hasSkin5))
-            button5.setEnabled(false);
-        if (!(hasSkin6))
-            button6.setEnabled(false);
+        if (hasSkin2) {
+            button2.setEnabled(true);
+            imgLb2.setEnabled(true);
+        }
+        if (hasSkin3) {
+            button3.setEnabled(true);
+            imgLb3.setEnabled(true);
+        }
+        if (hasSkin4) {
+            button4.setEnabled(true);
+            imgLb4.setEnabled(true);
+        }
+        if (hasSkin5) {
+            button5.setEnabled(true);
+            imgLb5.setEnabled(true);
+        }
+        if (hasSkin6) {
+            button6.setEnabled(true);
+            imgLb6.setEnabled(true);
+        }
 
         button1.setBounds(55, 123, 150, 30);
         button2.setBounds(217, 123, 150, 30);
@@ -138,27 +161,31 @@ class Skin extends JFrame {
     public static void skin1_buy() {
         JOptionPane.showMessageDialog(null, "파댕이 스킨을 획득하였습니다", "상점", JOptionPane.INFORMATION_MESSAGE);
     }
+
     public static void skin2_buy() {
         hasSkin2 = true;
         JOptionPane.showMessageDialog(null, "충성 파댕이 스킨을 획득하였습니다", "상점", JOptionPane.INFORMATION_MESSAGE);
     }
+
     public static void skin3_buy() {
         hasSkin3 = true;
         JOptionPane.showMessageDialog(null, "불의 축제 파댕이 스킨을 획득하였습니다", "상점", JOptionPane.INFORMATION_MESSAGE);
     }
+
     public static void skin4_buy() {
         hasSkin4 = true;
         JOptionPane.showMessageDialog(null, "리치 파댕이 스킨을 획득하였습니다", "상점", JOptionPane.INFORMATION_MESSAGE);
     }
+
     public static void skin5_buy() {
         hasSkin5 = true;
         JOptionPane.showMessageDialog(null, "나 파댕이 아니다 스킨을 획득하였습니다", "상점", JOptionPane.INFORMATION_MESSAGE);
     }
+
     public static void skin6_buy() {
         hasSkin6 = true;
         JOptionPane.showMessageDialog(null, "내가 젖소 파댕이 스킨을 획득하였습니다", "상점", JOptionPane.INFORMATION_MESSAGE);
     }
-
 
 
     public static void skin_all_buy() {
