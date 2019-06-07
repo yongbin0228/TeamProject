@@ -12,7 +12,7 @@ class Info {
     static int max_exp = 10;
     static int add_exp = 10;
     static int money = 100;
-    static int cash = 102213320;
+    static int cash = 100;
     static String input;
     static String input2;
 
