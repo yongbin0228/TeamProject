@@ -26,7 +26,7 @@ class Skin extends JFrame {
         setLocationRelativeTo(null);
         contentPane = getContentPane();
         contentPane.setLayout(null);
-
+        //글꼴 설정
         Enumeration<Object> keys = UIManager.getDefaults().keys();
         while (keys.hasMoreElements()) {
             Object key = keys.nextElement();
@@ -176,37 +176,37 @@ class Skin extends JFrame {
 
     }
 
-    public static void skin1_buy() {
+    public static void skin1_buy() { // 스킨 1 구매 메소드
         JOptionPane.showMessageDialog(null, "파댕이 스킨을 획득하였습니다", "상점", JOptionPane.INFORMATION_MESSAGE);
     }
 
-    public static void skin2_buy() {
+    public static void skin2_buy() { // 스킨 2 구매 메소드
         hasSkin2 = true;
         JOptionPane.showMessageDialog(null, "충성 파댕이 스킨을 획득하였습니다", "상점", JOptionPane.INFORMATION_MESSAGE);
     }
 
-    public static void skin3_buy() {
+    public static void skin3_buy() { // 스킨 3 구매 메소드
         hasSkin3 = true;
         JOptionPane.showMessageDialog(null, "불의 축제 파댕이 스킨을 획득하였습니다", "상점", JOptionPane.INFORMATION_MESSAGE);
     }
 
-    public static void skin4_buy() {
+    public static void skin4_buy() { // 스킨 4 구매 메소드
         hasSkin4 = true;
         JOptionPane.showMessageDialog(null, "리치 파댕이 스킨을 획득하였습니다", "상점", JOptionPane.INFORMATION_MESSAGE);
     }
 
-    public static void skin5_buy() {
+    public static void skin5_buy() { // 스킨 5 구매 메소드
         hasSkin5 = true;
         JOptionPane.showMessageDialog(null, "나 파댕이 아니다 스킨을 획득하였습니다", "상점", JOptionPane.INFORMATION_MESSAGE);
     }
 
-    public static void skin6_buy() {
+    public static void skin6_buy() { // 스킨 6 구매 메소드
         hasSkin6 = true;
         JOptionPane.showMessageDialog(null, "내가 젖소 파댕이 스킨을 획득하였습니다", "상점", JOptionPane.INFORMATION_MESSAGE);
     }
 
 
-    public static void skin_all_buy() {
+    public static void skin_all_buy()  { // 모든 스킨 구매 메소드
         hasSkin2 = true;
         hasSkin3 = true;
         hasSkin4 = true;
