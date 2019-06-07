@@ -18,11 +18,12 @@ class Info {
 
     static void moeny_up() {
         if (level < 99) {
-            int random = (int)(Math.random()*100+1);
-            if(random == 77){
+            int random = (int) (Math.random() * 100 + 1);
+            if (random == 77) {
                 cash += 100;
-                JOptionPane.showMessageDialog(null,"100CASH를 주웠습니다", "깜짝 보상", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "100CASH를 주웠습니다", "깜짝 보상", JOptionPane.INFORMATION_MESSAGE);
             }
+        }
         money+= coupon_money;
     }
 
