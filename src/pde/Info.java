@@ -17,6 +17,12 @@ class Info {
     static String input2;
 
     static void moeny_up() {
+        if (level < 99) {
+            int random = (int)(Math.random()*100+1);
+            if(random == 77){
+                cash += 100;
+                JOptionPane.showMessageDialog(null,"100CASH를 주웠습니다", "깜짝 보상", JOptionPane.INFORMATION_MESSAGE);
+            }
         money+= coupon_money;
     }
 
@@ -26,7 +32,6 @@ class Info {
             if(random == 77){
                 cash += 100;
                 JOptionPane.showMessageDialog(null,"100CASH를 주웠습니다", "깜짝 보상", JOptionPane.INFORMATION_MESSAGE);
-
             }
             exp += coupon_exp;
             if (exp >= max_exp) {
