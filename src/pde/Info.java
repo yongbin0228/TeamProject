@@ -8,6 +8,7 @@ class Info {
     static int level = 1;
     static int exp = 0;
     static int max_exp = 10;
+    static int add_exp = 10;
     static int money = 100;
     static int cash = 100;
     static String input;
@@ -18,11 +19,25 @@ class Info {
     }
 
     static void exp_up() {
-        exp++;
-        if (exp >= max_exp) {
-            level++;
-            exp = 0;
-            max_exp += 10;
+        if (level < 99) {
+            exp ++;
+            if (exp >= max_exp) {
+                level++;
+                exp = 0;
+                money += level*10;
+                JOptionPane.showMessageDialog(null,"LEVEL UP!!\n돈  "+level*10+"원 획득", "레벨 업", JOptionPane.INFORMATION_MESSAGE);
+                if (level % 10 == 0) {
+                    add_exp += 10;
+                }
+                max_exp += add_exp;
+            }
+        } else if (level == 99) {
+            exp++;
+            if (exp >= max_exp) {
+                level++;
+                exp = 0;
+                max_exp = 0;
+            }
         }
     }
 

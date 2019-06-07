@@ -93,13 +93,24 @@ public class Main extends JFrame {
         });
         btn2.addActionListener(event -> {
             Info.exp_up();
-            lb2.setText("레     벨 : "+Info.level+"Lv");
-            lb3.setText("경 험 치 : "+Info.exp+"/"+Info.max_exp);
+            if(Info.level==100){
+                lb2.setText("레     벨 : MAX ");
+                lb3.setText("경 험 치 : "+Info.exp+"/"+Info.max_exp);
+                Info.money += 10000;
+                lb4.setText("    돈      : "+Info.money+" PD");
+                JOptionPane.showMessageDialog(null,"100 LEVEL 달성!\n돈 1000원 획득", "레벨 업", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null,"100레벨이 되어 경험치 ↑ 버튼이 비활성화 됩니다","레벨 업", JOptionPane.INFORMATION_MESSAGE);
+                btn2.setEnabled(false);
+            }else {
+                lb2.setText("레     벨 : " + Info.level + "Lv");
+                lb3.setText("경 험 치 : " + Info.exp + "/" + Info.max_exp);
+                lb4.setText("    돈      : "+Info.money+" PD");
+            }
         });
         btn4.addActionListener(event -> {
             Info.cash_add();
             lb5.setText("캐     쉬 : "+Info.cash+" CASH");
-            JOptionPane.showMessageDialog(null,Info.input+"CASH가 충전되었습니다", "캐쉬 충전", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null,Info.input+"CASH가 충전되었습니다", "캐쉬 충전", JOptionPane.INFORMATION_MESSAGE);
         });
         btn5.addActionListener(event -> {
             Info.name_change();
