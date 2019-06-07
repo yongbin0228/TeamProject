@@ -102,7 +102,7 @@ public class Shop extends JFrame {
         button1.addActionListener(event -> {
             if (Info.cash >= 20000) {
                 Info.cash -= 20000;
-            }
+
             int random = (int) (Math.random() * 6 + 1);
             switch (random) {
                 case 1:
@@ -123,6 +123,10 @@ public class Shop extends JFrame {
                 case 6:
                     Skin.skin6_buy();
                     break;
+            }
+                lb5.setText("캐     쉬 : " + Info.cash + " CASH");
+            }else {
+                JOptionPane.showMessageDialog(null, "CASH가 부족합니다", "상점", JOptionPane.WARNING_MESSAGE);
             }
             if ((Skin.hasSkin2 && Skin.hasSkin3 && Skin.hasSkin4 && Skin.hasSkin5 && Skin.hasSkin6)) {
                 btn1 = false;
