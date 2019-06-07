@@ -11,8 +11,8 @@ class Info {
     static int exp = 0;
     static int max_exp = 200;
     static int add_exp = 50;
-    static int money = 100;
-    static int cash = 100;
+    static int money = 121312300;
+    static int cash = 101231230;
     static int skin = 1;
     static String input;
     static String input2;

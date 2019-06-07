@@ -180,7 +180,7 @@ public class Shop extends JFrame {
                 lb4.setText("    돈      : "+Info.money+" PD");
                 lb5.setText("캐     쉬 : " + Info.cash + " CASH");
 
-                JOptionPane.showMessageDialog(null, "구매 완료 현재 돈 [ "+Info.money+" PD ]", "상점", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "구매 완료\n현재 돈 [ "+Info.money+" PD ]", "상점", JOptionPane.INFORMATION_MESSAGE);
             }else {
                 JOptionPane.showMessageDialog(null, "CASH가 부족합니다", "상점", JOptionPane.WARNING_MESSAGE);
             }
