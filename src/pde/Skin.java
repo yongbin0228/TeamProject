@@ -70,6 +70,7 @@ class Skin extends JFrame {
         contentPane.add(imgLb5);
         contentPane.add(imgLb6);
 
+        //프레임에 버튼 추가
         contentPane.add(button1);
         contentPane.add(button2);
         contentPane.add(button3);
