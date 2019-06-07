@@ -3,10 +3,11 @@ package pde;
 import javax.swing.*;
 import javax.swing.plaf.FontUIResource;
 import java.awt.*;
-import java.util.*;
+import java.util.Enumeration;
 
 public class Main extends JFrame {
     Container contentPane;
+
     Main() {
         //프레임 제목 설정
         setTitle("파댕이 키우기");
@@ -27,39 +28,39 @@ public class Main extends JFrame {
 
         //라벨
         JLabel lb1 = new JLabel();
-        lb1.setBounds(20,30,184,30);
-        lb1.setText("이     름 : "+Info.name);
+        lb1.setBounds(20, 30, 184, 30);
+        lb1.setText("이     름 : " + Info.name);
         contentPane.add(lb1);
         JLabel lb2 = new JLabel();
-        lb2.setBounds(20,60,184,30);
-        lb2.setText("레     벨 : "+Info.level+"Lv");
+        lb2.setBounds(20, 60, 184, 30);
+        lb2.setText("레     벨 : " + Info.level + "Lv");
         contentPane.add(lb2);
         JLabel lb3 = new JLabel();
-        lb3.setBounds(20,90,184,30);
-        lb3.setText("경 험 치 : "+Info.exp+"/"+Info.max_exp);
+        lb3.setBounds(20, 90, 184, 30);
+        lb3.setText("경 험 치 : " + Info.exp + "/" + Info.max_exp);
         contentPane.add(lb3);
         JLabel lb4 = new JLabel();
-        lb4.setBounds(20,120,184,30);
-        lb4.setText("    돈      : "+Info.money+" PD");
+        lb4.setBounds(20, 120, 184, 30);
+        lb4.setText("    돈      : " + Info.money + " PD");
         contentPane.add(lb4);
         JLabel lb5 = new JLabel();
-        lb5.setBounds(20,150,184,30);
-        lb5.setText("캐     쉬 : "+Info.cash+" CASH");
+        lb5.setBounds(20, 150, 184, 30);
+        lb5.setText("캐     쉬 : " + Info.cash + " CASH");
         contentPane.add(lb5);
         JLabel lb6 = new JLabel();
-        lb6.setBounds(18,175,184,30);
+        lb6.setBounds(18, 175, 184, 30);
         lb6.setText("[ 파댕이 ]");
         contentPane.add(lb6);
         JLabel lb7 = new JLabel();
-        lb7.setBounds(18,200,184,30);
-        lb7.setText("[ EXP ↑ : "+Info.skin*Info.coupon_exp +", PD ↑ : "+Info.skin*Info.coupon_money+" ]");
+        lb7.setBounds(18, 200, 184, 30);
+        lb7.setText("[ EXP ↑ : " + Info.skin * Info.coupon_exp + ", PD ↑ : " + Info.skin * Info.coupon_money + " ]");
         contentPane.add(lb7);
 
         JLabel imgLb = new JLabel();
         ImageIcon img = new ImageIcon("images/pde1.png");
-       imgLb.setIcon(img);ㅏ
+        imgLb.setIcon(img);
 
-        imgLb.setBounds(204,30,150,150);
+        imgLb.setBounds(204, 30, 150, 150);
         contentPane.add(imgLb);
 
 
@@ -88,34 +89,34 @@ public class Main extends JFrame {
         //프레임에 버튼6추가
         contentPane.add(btn6);
         //버튼 위치설정
-        btn1.setBounds(27,231,92,30);
-        btn2.setBounds(146,231,92,30);
-        btn3.setBounds(265,231,92,30);
-        btn4.setBounds(27,271,92,30);
-        btn5.setBounds(146,271,92,30);
-        btn6.setBounds(265,271,92,30);
+        btn1.setBounds(27, 231, 92, 30);
+        btn2.setBounds(146, 231, 92, 30);
+        btn3.setBounds(265, 231, 92, 30);
+        btn4.setBounds(27, 271, 92, 30);
+        btn5.setBounds(146, 271, 92, 30);
+        btn6.setBounds(265, 271, 92, 30);
 
         //버튼 클릭시 이벤트 설정
         btn1.addActionListener(event -> {
             Info.moeny_up();
-            lb4.setText("    돈      : "+Info.money+" PD");
-            lb5.setText("캐     쉬 : "+Info.cash+" CASH");
+            lb4.setText("    돈      : " + Info.money + " PD");
+            lb5.setText("캐     쉬 : " + Info.cash + " CASH");
         });
         btn2.addActionListener(event -> {
             Info.exp_up();
-            lb5.setText("캐     쉬 : "+Info.cash+" CASH");
-            if(Info.level==100){
+            lb5.setText("캐     쉬 : " + Info.cash + " CASH");
+            if (Info.level == 100) {
                 lb2.setText("레     벨 : MAX ");
-                lb3.setText("경 험 치 : "+Info.exp+"/"+Info.max_exp);
+                lb3.setText("경 험 치 : " + Info.exp + "/" + Info.max_exp);
                 Info.money += 1000;
-                lb4.setText("    돈      : "+Info.money+" PD");
-                JOptionPane.showMessageDialog(null,"100 LEVEL 달성!\n돈 1000원 획득", "레벨 업", JOptionPane.INFORMATION_MESSAGE);
-                JOptionPane.showMessageDialog(null,"100레벨이 되어 경험치 ↑ 버튼이 비활성화 됩니다","레벨 업", JOptionPane.INFORMATION_MESSAGE);
+                lb4.setText("    돈      : " + Info.money + " PD");
+                JOptionPane.showMessageDialog(null, "100 LEVEL 달성!\n돈 1000원 획득", "레벨 업", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "100레벨이 되어 경험치 ↑ 버튼이 비활성화 됩니다", "레벨 업", JOptionPane.INFORMATION_MESSAGE);
                 btn2.setEnabled(false);
-            }else {
+            } else {
                 lb2.setText("레     벨 : " + Info.level + "Lv");
                 lb3.setText("경 험 치 : " + Info.exp + "/" + Info.max_exp);
-                lb4.setText("    돈      : "+Info.money+" PD");
+                lb4.setText("    돈      : " + Info.money + " PD");
             }
         });
         btn3.addActionListener(event -> {
@@ -123,12 +124,12 @@ public class Main extends JFrame {
         });
         btn4.addActionListener(event -> {
             Info.cash_add();
-            lb5.setText("캐     쉬 : "+Info.cash+" CASH");
-            JOptionPane.showMessageDialog(null,Info.input+"CASH가 충전되었습니다", "캐쉬 충전", JOptionPane.INFORMATION_MESSAGE);
+            lb5.setText("캐     쉬 : " + Info.cash + " CASH");
+            JOptionPane.showMessageDialog(null, Info.input + "CASH가 충전되었습니다", "캐쉬 충전", JOptionPane.INFORMATION_MESSAGE);
         });
         btn5.addActionListener(event -> {
             Info.name_change();
-            lb1.setText("이     름 : "+Info.name);
+            lb1.setText("이     름 : " + Info.name);
             JOptionPane.showMessageDialog(null, Info.name + "으로 이름이 변경되었습니다", "이름 변경", JOptionPane.INFORMATION_MESSAGE);
 
         });
