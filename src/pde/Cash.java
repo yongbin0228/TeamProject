@@ -55,6 +55,7 @@ public class Cash extends JFrame {
                         lb5.setText("캐     쉬 : " + Info.cash + " CASH"); //수정된 캐쉬값 설정
                         JOptionPane.showMessageDialog(null,code[num][0]+"캐쉬가 충전되었습니다", "캐쉬", JOptionPane.WARNING_MESSAGE);
                         code[num][1] = "사용된 코드";
+                        break;
                     }else{
                         JOptionPane.showMessageDialog(null, "등록된 코드가 아닙니다", "캐쉬", JOptionPane.WARNING_MESSAGE);
                     }
