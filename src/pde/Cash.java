@@ -86,6 +86,7 @@ public class Cash extends JFrame {
                                 code[code_count][0] = input;
                                 code[code_count][1] = input2;
                                 JOptionPane.showMessageDialog(null, "금액 : " + input + "원, 코드 : " + input2, "캐쉬", JOptionPane.INFORMATION_MESSAGE);
+                                code_count++;
                                 break While;
                             }
                         } else {
