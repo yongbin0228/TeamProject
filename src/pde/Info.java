@@ -15,8 +15,9 @@ class Info {
     static int money = 100; // 돈
     static int cash = 100; // 캐쉬
     static int skin = 1; // 스킨에 따른 추가 경험치, 돈
-    static String input; // 캐쉬 충전 금액
-    static String input2; // 캐쉬 충전 코드
+    static String input; // 이름 변경
+
+
 
     static void moeny_up() { //돈 ↑ 메소드
         if (level < 99) {
@@ -26,7 +27,7 @@ class Info {
                 JOptionPane.showMessageDialog(null, "100CASH를 주웠습니다", "깜짝 보상", JOptionPane.INFORMATION_MESSAGE); // 메세지 출력
             }
         }
-        money += coupon_money*skin; // 한번 클릭할 때 마다 돈을 추가한다 ( coupon_money * skin )
+        money += coupon_money * skin; // 한번 클릭할 때 마다 돈을 추가한다 ( coupon_money * skin )
     }
 
     static void exp_up() { // 경험치 ↑ 메소드
@@ -36,7 +37,7 @@ class Info {
                 cash += 100;  //캐쉬에 100원을 추가함
                 JOptionPane.showMessageDialog(null, "100CASH를 주웠습니다", "깜짝 보상", JOptionPane.INFORMATION_MESSAGE); // 메세지 출력
             }
-            exp += coupon_exp*skin; // 한번 클릭할 때 마다 경험치를 추가한다 ( coupon_money * skin )
+            exp += coupon_exp * skin; // 한번 클릭할 때 마다 경험치를 추가한다 ( coupon_money * skin )
             if (exp >= max_exp) { // 만약 경험치가 필요한 경험치양보다 같거나 많다면
                 level++; // 레벨을 1 올리고
                 exp = 0; // 경험치를 0으로 초기화
@@ -48,7 +49,7 @@ class Info {
                 max_exp += add_exp; //필요한 경험치양 증가
             }
         } else if (level == 99) { //만약 레벨이 99라면
-            exp += coupon_exp*skin; // 한번 클릭할 때 마다 경험치를 추가한다 ( coupon_money * skin )
+            exp += coupon_exp * skin; // 한번 클릭할 때 마다 경험치를 추가한다 ( coupon_money * skin )
             if (exp >= max_exp) {// 만약 경험치가 필요한 경험치양보다 같거나 많다면
                 level++; // 레벨을 1올리고
                 exp = 0; //경험치를 0으로 초기화
@@ -68,26 +69,4 @@ class Info {
             }
         }
     }
-
-    static void cash_add() { //캐쉬충전 메소드
-
-        While:
-        while (true) {
-            input = JOptionPane.showInputDialog("충전 금액을 입력하세요 [ 1000, 5000, 10000, 50000 ] ");
-            if (!(input.equals("1000") || input.equals("5000") || input.equals("10000") || input.equals("50000"))) {
-                JOptionPane.showMessageDialog(null, "금액이 올바르지 않습니다", "캐쉬 충전", JOptionPane.WARNING_MESSAGE);
-            } else {
-                while (true) {
-                    input2 = JOptionPane.showInputDialog("충전 코드를 입력하세요 ex) 1234-5678-1234-5678 ");
-                    if ((input2.equals("2019-0605-2019-0607"))) { //충전 코드
-                        cash += Integer.valueOf(input);
-                        break While; // 74Line 의 While 라벨을 벗어남
-                    } else {
-                        JOptionPane.showMessageDialog(null, "코드가 올바르지 않습니다", "캐쉬 충전", JOptionPane.WARNING_MESSAGE);
-                    }
-                }
-            }
-        }
-    }
 }
-

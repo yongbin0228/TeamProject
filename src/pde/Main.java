@@ -77,7 +77,7 @@ public class Main extends JFrame {
         //프레임에 버튼3 추가
         contentPane.add(btn3);
         // 버튼4 생성
-        JButton btn4 = new JButton("캐쉬 충전");
+        JButton btn4 = new JButton("캐     쉬");
         //프레임에 버튼4 추가
         contentPane.add(btn4);
         // 버튼5생성
@@ -123,10 +123,8 @@ public class Main extends JFrame {
         btn3.addActionListener(event -> { // 상점 버튼 클릭시
             new Shop(lb2, lb3, lb4, lb5, lb7, btn2);
         });
-        btn4.addActionListener(event -> { // 캐쉬 충전 버튼 클릭시
-            Info.cash_add();
-            lb5.setText("캐     쉬 : " + Info.cash + " CASH"); //메세지 변경
-            JOptionPane.showMessageDialog(null, Info.input + "CASH가 충전되었습니다", "캐쉬 충전", JOptionPane.INFORMATION_MESSAGE); //메시지 출력
+        btn4.addActionListener(event -> { // 캐쉬 버튼 클릭시
+            new Cash(lb5);
         });
         btn5.addActionListener(event -> { // 이름 변경 버튼 클릭시
             Info.name_change();
@@ -145,6 +143,9 @@ public class Main extends JFrame {
     }
 
     public static void main(String[] args) {
+        for(int i=0; i<Cash.code.length; i++){
+            Cash.code[i][1] = "CODE"+i;
+        }
         new Main();
     }
 }
