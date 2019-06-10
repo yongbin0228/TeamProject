@@ -10,7 +10,7 @@ public class Shop extends JFrame {
     static boolean btn1 = true;
     static boolean btn2 = true;
     static boolean btn3 = true;
-    static boolean btn4 = false;
+    static boolean btn4 = true;
     static boolean btn5 = true;
     static boolean btn6 = true;
 
